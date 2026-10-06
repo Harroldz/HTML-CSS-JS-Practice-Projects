@@ -1,28 +1,38 @@
-<!DOCTYPE <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Blog Post</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link 
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" 
-    rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
+        <title>Interactive Todo List</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                text-align: center;
+            }
+
+            #taskList {
+                list-style: none;
+                padding: 0;
+            }
+
+            .task {
+                cursor: pointer;
+                padding: 8px;
+                background: #f0f0f0;
+                margin: 5px 0;
+                border-radius:  5px;
+            }
+
+            .task:hover {
+                background: #ddd;
+            }
+        </style>
     </head>
     <body>
-        <article class="blog-post">
-            <h2 class="heading">Power of CSS Typography</h2>
-            <p class="intro">
-                Typography is the art of arranging text in a readable and 
-                visually appealing way.
-            </p>
-            <p class="content">
-                Good Typography improves user experience and makes content easier to 
-                digest.
-            </p>
-        </article>
+        <h1>Todo List</h1>
+            <input type="text" id="taskInput" placeholder="Enter a task" />
+            <button onclick="addTask()">add Task</button>
+            <ul id="taskList"></ul>
+            <script src="script.js"></script>
     </body>
 </html>

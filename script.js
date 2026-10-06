@@ -1,17 +1,22 @@
-const tasks = []
+const taskInput = document.getElementById("taskInput");
+const taskList = document.getElementById("taskList");
 
-while(true) {
-    let task = prompt("Enter a task (ortype 'done' to finish)")
+function addTask() {
+    const taskText = taskInput.value.trim();
+    if(taskText === "") return;
 
-    if (task.toLowerCase() === 'done') {
-        break
-    }
+    const taskItem = document.createElement("li");
+    taskItem.textContent = taskText;
+    taskItem.classList.add("task");
 
-    tasks.push(task)
+    //add a click event to remove task
+    taskItem.addEventListener("click", function () {
+        taskList.removeChild(taskItem);
+});
+
+    taskList.appendChild(taskItem);
+
+    taskInput.value = "";
 }
 
-console.log("Your Todo List:")
-tasks.forEach((task, index) => {
-    console.log(`${index + 1}. ${task}`)
-})
 
