@@ -1,22 +1,16 @@
-const taskInput = document.getElementById("taskInput");
-const taskList = document.getElementById("taskList");
+let num1 = prompt("Enter First Number:");
+let num2 = prompt("Enter Second Number:");
 
-function addTask() {
-    const taskText = taskInput.value.trim();
-    if(taskText === "") return;
+num1 = parseFloat(num1);
+num2 = parseFloat(num2);
 
-    const taskItem = document.createElement("li");
-    taskItem.textContent = taskText;
-    taskItem.classList.add("task");
+const sum = num1 + num2;
+const diff = num1 - num2;
+const product = num1 * num2;
+const quotient = num1 / num2;
 
-    //add a click event to remove task
-    taskItem.addEventListener("click", function () {
-        taskList.removeChild(taskItem);
-});
-
-    taskList.appendChild(taskItem);
-
-    taskInput.value = "";
-}
-
+console.log(`Sum: ${sum}`);
+console.log(`Diff: ${diff}`);
+console.log(`Product: ${product}`);
+console.log(`Quotient: ${quotient}`);
 
