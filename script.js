@@ -1,33 +1,23 @@
+async function fetchData() {
+    const loadingText = document.getElementById("loading");
+    const dataText = document.getElementById("data");
 
+    loadingText.style.display = "block" //show loading message...
+    dataText.textContent = "";
 
-const scoreTracker = {
-    1: 0,
-    2: 0,
-    3: 0,
-    4: 0,
-    5: 0,
-    6: 0,
-};
-
-//roll dice function
-function rollDice() {
-    const roll = Math.floor(Math.random() * 6) + 1;
-    scoreTracker[roll]++; // increase count of rolled number
-    console.log(`You rolled a ${roll}`);
-}
-
-function displayScores() {
-    console.log(`Dice Roll Score Tracker:`);
-    for (const roll in scoreTracker) {
-        console.log(`${roll}: ${scoreTracker[roll]} times`)
+    try {
+        const response = await new Promise((resolve, reject) => {
+            setTimeout(
+                () => 
+                    Math.random() > 0.5 ? resolve("Data loaded successfully") : reject(), 
+                3000
+            );
+        });
+        dataText.textContent = response; //show data
+    }   catch (error) {
+        dataText.textContent = "Error loading data";
+    }   finally {
+        loadingText.style.display = "none";
     }
-}    
-
-//simulating dice rolls
-for (let i = 0; i < 100; i++) {
-    rollDice();
 }
-
-//display final score summary
-displayScores();
 
