@@ -1,16 +1,14 @@
-let num1 = prompt("Enter First Number:");
-let num2 = prompt("Enter Second Number:");
+const buttons = document.querySelectorAll(".color-btn");
+const resetButton = document.getElementById("reset");
 
-num1 = parseFloat(num1);
-num2 = parseFloat(num2);
+buttons.forEach((button) => {
+    button.addEventListener("click", function () {
+        document.body.style.backgroundColor = button.getAttribute("data-color");
+    });
+});
 
-const sum = num1 + num2;
-const diff = num1 - num2;
-const product = num1 * num2;
-const quotient = num1 / num2;
-
-console.log(`Sum: ${sum}`);
-console.log(`Diff: ${diff}`);
-console.log(`Product: ${product}`);
-console.log(`Quotient: ${quotient}`);
+// reset background color
+resetButton.addEventListener("click", function () {
+    document.body.style.backgroundColor = "white";
+});
 
