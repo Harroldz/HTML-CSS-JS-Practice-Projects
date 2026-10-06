@@ -1,12 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>INSERT</title>
-        <script src="scripts.js"></script>
+        <meta name="description" content="A fully structured HTML page" />
+       <title>Complete Website</title>
     </head>
     <body>
-
+        <header> 
+            <h1>Code Bootcamp Sign Up</h1>
+            <p>Begin your journey to becoming a code Master</p>
+        </header>
+        <section>
+            <h2>Bootcamp offerings</h2>
+            <ul>
+                <li>HTML Structure</li>
+                <li>Python, JS, Java, C, C#, C++</li>
+                <li>Personalized Mentor</li>
+                <li>Real World Projects</li>
+                <li>Networking Events</li>
+                <li>A whole lot of fun</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Student Roles landed</h2>
+            <table border="1">
+                <tr>
+                    <th>Name</th>
+                    <th>Company</th>
+                    <th>Role Acquired</th>
+                </tr>
+                <tr>
+                    <td>Bob</td>
+                    <td>Meta</td>
+                    <td>Software Engineer</td>
+                </tr>
+                                <tr>
+                    <td>Alice</td>
+                    <td>Google</td>
+                    <td>Security Engineer</td>
+                </tr>
+                                <tr>
+                    <td>Steve</td>
+                    <td>JP Morgan</td>
+                    <td>Senior Software Engineer</td>
+                </tr>
+            </table>    
+        </section>
+        <section>
+            <h2>Signup Form</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" required />
+                <br />
+                <label for="email">Email:</label>
+                <input type="email" id="email" required />
+                <br />
+                <label for="password">Password:</label>
+                <input type="password" id="password" required />
+                <br />
+                <label for="Phone Number">Phone Number:</label>
+                <input type="Phone Number" id="Phone Number" required />
+                <br />
+                <select id="country">
+                    <option value="">Please Choose</option>
+                    <option value="USA">USA</option>
+                    <option value="Korea">Korea</option>
+                    <option value="Greece">Greece</option>
+                </select>
+                <br />
+                <br />
+                <button type="submit">Sign up</button>
+            </form>
+        </section>
+        <footer>
+            <p>Created By Harry - 2026</p>
+        </footer>
     </body>
 </html>
