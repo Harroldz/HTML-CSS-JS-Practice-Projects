@@ -1,37 +1,28 @@
-article {
-    border: 1px solid black;
-    width: 60$;
-    margin: auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1)
+/*
+Image link
+*/
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
 
-article:hover {
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8)
-}
-
-h2 {
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    color: white;
+    background-image: url('https://static.wikia.nocookie.net/hades_gamepedia_en/images/3/34/Greece_lovers%27_lane.jpg/revision/latest?cb=20240414225244');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
-.highlight {
-    background-color: yellow;
-}
-
-.highlight:hover {
-    font-weight: bold;
-}
-
-.quote::before {
-    content:'"';
-    font-size: 20px;
-    color:gray;
-}
-
-.quote::after {
-    content:'"';
-    font-size: 20px;
-    color:gray;
+.hero h1 {
+    font-size: 40px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0,5);
 }
