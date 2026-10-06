@@ -1,52 +1,17 @@
-// init students array
-const students = [];
+const tasks = []
 
-// add student
-function addStudent(name,grade) {
-    students.push({
-        name,
-        grade,
-    });
-}
+while(true) {
+    let task = prompt("Enter a task (ortype 'done' to finish)")
 
-//function to remove student
-function removeStudent(name) {
-    const index = students.findIndex(student => student.name === name)
-    if(index !== -1) {
-        students.splice(index, 1)
-        console.log(name, 'haas been removed');
-    }else {
-        console.log(name, 'was not found');
+    if (task.toLowerCase() === 'done') {
+        break
     }
+
+    tasks.push(task)
 }
 
-// function to filter students
-function filterTopStudents(minGrade) {
-    return students.filter(student => student.grade >= minGrade);
-}
+console.log("Your Todo List:")
+tasks.forEach((task, index) => {
+    console.log(`${index + 1}. ${task}`)
+})
 
-// function to map students in formatted list
-function formatStudentList() {
-    return students.map(student => `${student.name} - Grade: ${student.grade}`)
-}
-
-//start
-console.log("students =", students);
-
-//add students
-addStudent("Alice", 85);
-addStudent("Bob", 90);
-addStudent("Charles", 78);
-addStudent("Davie", 60);
-addStudent("Emma", 92);
-
-console.log("STUDENT LIST:")
-console.log(formatStudentList());
-
-removeStudent("Charles");
-
-console.log("STUDENT LIST:");
-console.log(formatStudentList());
-
-console.log("Students with Grade equal to or higher than 80")
-console.log(filterTopStudents(80));
