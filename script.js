@@ -1,14 +1,33 @@
-const buttons = document.querySelectorAll(".color-btn");
-const resetButton = document.getElementById("reset");
 
-buttons.forEach((button) => {
-    button.addEventListener("click", function () {
-        document.body.style.backgroundColor = button.getAttribute("data-color");
-    });
-});
 
-// reset background color
-resetButton.addEventListener("click", function () {
-    document.body.style.backgroundColor = "white";
-});
+const scoreTracker = {
+    1: 0,
+    2: 0,
+    3: 0,
+    4: 0,
+    5: 0,
+    6: 0,
+};
+
+//roll dice function
+function rollDice() {
+    const roll = Math.floor(Math.random() * 6) + 1;
+    scoreTracker[roll]++; // increase count of rolled number
+    console.log(`You rolled a ${roll}`);
+}
+
+function displayScores() {
+    console.log(`Dice Roll Score Tracker:`);
+    for (const roll in scoreTracker) {
+        console.log(`${roll}: ${scoreTracker[roll]} times`)
+    }
+}    
+
+//simulating dice rolls
+for (let i = 0; i < 100; i++) {
+    rollDice();
+}
+
+//display final score summary
+displayScores();
 
